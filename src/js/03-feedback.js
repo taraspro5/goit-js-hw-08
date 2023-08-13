@@ -22,8 +22,12 @@ function handlerInput(evt) {
 function set(evt) {
   const message = JSON.parse(localStorage.getItem(KEY));
   if (message) {
-    selectors.input.value = message.email;
-    selectors.textarea.value = message.message;
+    if (message.email) {
+      selectors.input.value = message.email;
+    }
+    if (message.message) {
+      selectors.textarea.value = message.message;
+    }
   }
 }
 
